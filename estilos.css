@@ -1,0 +1,313 @@
+ body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+        header {
+            background-color: #5a122d; /* El color morado/vino de tu captura */
+            color: #ffd700; /* El color dorado de tus letras */
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-style: italic;
+            color: #fff;
+        }
+        /* Tu menú de navegación */
+        nav {
+            background-color: #3d0016;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        /* Contenedor de la Bienvenida */
+        .bienvenida-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .imagen-portada {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .boton-entrar {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background-color: #5a122d;
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .boton-entrar:hover {
+            background-color: #ffd700;
+            color: #5a122d;
+        }
+        /* Estilos para la galería de imágenes por día */
+/* --- Bloque Limpio y Optimizado para la Galería --- */
+
+/* Contenedor padre de la galería */
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cada tarjeta individual */
+.item-foto {
+    background-color: #ffffff;
+    border-radius: 8px; /* Bordes redondeados sutiles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Corta la imagen si sobresale de las esquinas */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de elevación en la tarjeta al pasar el ratón */
+.item-foto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* La imagen dentro de la tarjeta */
+.item-foto img {
+    width: 100%;
+    height: 200px; /* Altura fija para equilibrar los tamaños */
+    object-fit: cover; /* Recorta la foto sin deformarla */
+    display: block;
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+/* Efecto zoom exclusivo para la imagen al pasar el ratón sobre la tarjeta */
+.item-foto:hover img {
+    transform: scale(1.05);
+}
+
+/* Pie de foto / Texto debajo de la imagen */
+.pie-foto {
+    padding: 12px 10px;
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    font-family: sans-serif;
+    font-style: italic;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Sección de la historia (Texto introductorio) */
+.seccion-historia {
+    max-width: 800px; /* Evita que el texto se estire a lo largo de toda la pantalla */
+    margin: 40px auto; /* El 'auto' se encarga de centrar todo el bloque en el medio */
+    padding: 0 20px; /* Deja un espacio de seguridad en los bordes para pantallas móviles */
+    text-align: center; /* Mantiene el texto alineado al centro */
+}
+
+.seccion-historia p {
+    font-size: 16px;
+    line-height: 1.6; /* Añade espacio entre líneas para que sea más fácil de leer */
+    color: #444444; /* Un gris oscuro que cansa menos la vista que el negro puro */
+}
+
+/* Estilo especial cuando solo hay una cofradía en el día */
+.tarjeta-unica {
+    max-width: 450px; /* Evita que la tarjeta ocupe toda la pantalla de lado a lado */
+    margin: 0 auto; /* La centra perfectamente en medio de la página */
+}
+
+.tarjeta-unica img {
+    height: auto; /* Permite que la imagen mantenga su proporción original sin recortarse */
+}
+/* Estilos para la sección de un solo vídeo */
+.contenedor-video {
+    max-width: 700px; /* Ancho ideal para que el reproductor no sea gigantesco */
+    margin: 30px auto; /* Centra el vídeo horizontalmente */
+    padding: 0 20px; /* Margen de seguridad para móviles */
+}
+
+.contenedor-video video, 
+.contenedor-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción clásica de vídeo de alta definición */
+    border-radius: 8px; /* Bordes redondeados idénticos a tus tarjetas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    display: block;
+}
+/* --- Estilos para el Pie de Página (Footer) --- */
+.pie-pagina {
+    background-color: #600018; /* El mismo color burdeos de tu menú superior */
+    color: #ffffff; /* Texto en blanco para que contraste bien */
+    text-align: center; /* Centra el texto */
+    padding: 20px 10px; /* Espacio interno arriba y abajo */
+    margin-top: 50px; /* Separa el footer del contenido de arriba (tarjetas/vídeo) */
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.pie-pagina p {
+    margin: 0; /* Elimina márgenes por defecto del párrafo */
+}
+/* Asegura que el contenedor controle el recorte de la animación */
+.item-foto {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para la capa de la historia que se deslizará */
+.historia-oculta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* El mismo color burdeos de tu cabecera pero con transparencia */
+    background-color: rgba(94, 21, 31, 0.95); 
+    color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* Centra el texto vertical y horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    
+    /* Lo esconde inicialmente hacia abajo */
+    transform: translateY(100%);
+    /* Hace que el movimiento dure 0.4 segundos de forma suave */
+    transition: transform 0.4s ease-in-out;
+}
+
+.lista-historias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.enlace-historia {
+    padding: 18px;
+    background-color: #5a122d;
+    border-radius: 6px;
+    color: #ffd700;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.enlace-historia:hover {
+    background-color: #ffd700;
+    color: #5a122d;
+}
+
+/* EFECTO: Cuando pases el ratón por encima de la tarjeta, la historia sube */
+.item-foto:hover .historia-oculta {
+    transform: translateY(0);
+}
+/* Centra el bloque y crea una cuadrícula de 2 columnas en pantallas grandes */
+.bloque-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Controla el tamaño de cada reproductor */
+.contenedor-video {
+    flex: 1;
+    min-width: 320px;
+    max-width: 560px;
+}
+/* Estilos para pantallas de móvil */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 12px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav a:last-child {
+    border-bottom: none; /* Elimina la línea en el último botón */
+  }
+}
+/* Estilos para el contenedor del footer */
+.pie-pagina {
+    background-color: #500b14;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilo para el texto de copyright */
+.pie-pagina .texto-principal {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Estilo para el texto aclaratorio de los videos */
+.pie-pagina .texto-secundario {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    color: #f4dcd0;
+}
+/* CORREGIDO: Cambiado -history por -historia */
+.contenedor-historia {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: sans-serif;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.contenedor-historia h2 {
+    color: #500b14;
+    border-bottom: 2px solid #f4dcd0;
+    padding-bottom: 6px;
+    margin-top: 30px;
+}
